@@ -1,0 +1,77 @@
+/* pages/message/message.wxss */
+
+.messageTitle{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:50rpx;
+  color:#6fa6cf;
+}
+
+.lineView{
+  border-top:1px solid #327ee7;
+  width:300rpx;
+}
+.lineView1{
+  border-top:1px solid white;
+  width:300rpx;
+}
+
+
+.message-common{
+  display:flex;
+  flex-direction:column;
+  margin-top:20rpx;
+  margin-left:150rpx;
+}
+
+.input-wrap1{
+  display:flex;
+  flex-direction:row;
+  margin-top:85rpx;
+
+}
+.input-wrap2{
+  display:flex;
+  flex-direction:column;
+  margin-top:20rpx;  
+}
+
+.info-input{
+  border-bottom:2rpx solid black;
+  width:300rpx;
+  margin-left:30rpx;
+}
+
+.choose1{
+  display:flex;
+  flex-direction:row;
+  margin-left:70rpx;  
+}
+.choose2{
+  display:flex;
+  flex-direction:row;
+  margin-left:90rpx;  
+  margin-top:40rpx;
+}
+
+.break{
+  margin-left:70rpx;
+}
+
+.differ1{
+  display:flex;
+  flex-direction:column;
+  margin-left:150rpx;
+}
+.differ2{
+  display:none;
+}
+
+.login{
+  margin-top:130rpx;
+  background-color:#6fa6cf;
+  color:white;
+  border-radius:98rpx;
+  width:80%;
+}

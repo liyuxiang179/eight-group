@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+<view class="page-title">用户登录</view>
+ <view class="input-wrap1">
+  <view> 用户名：</view>
+  <input value="{{username}}" bindinput="inputUsername" class="info-input"/>
+  </view>
+  <view class="input-wrap2">
+  <view> 密 码 ：</view>
+  <input value="{{password}}" bindinput="inputPassword" class="info-input"/>
+  </view>
+
+  <button bindtap="Login1" style="width:400rpx" class="login1">登录</button>
+  <button bindtap="Login2" style="width:275rpx" class="login2">新用户注册</button>
+  </view>
+
+

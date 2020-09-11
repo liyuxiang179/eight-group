@@ -1,0 +1,70 @@
+<!--pages/message/message.wxml-->
+<view class="messageTitle">
+<text class="viewname">用户注册</text>
+<view class="lineView"></view>
+<view class="lineView1"></view>
+<view class="lineView"></view>
+</view>
+
+
+<view class="message-common">
+<view class="input-wrap1">
+<view>用户名</view>
+<input value="{{username}}" bindinput="inputNewusername" class="info-input"/>
+</view>
+
+
+<view class="input-wrap1">
+<view> 密 码 </view>
+<input value="{{password}}" bindinput="inputNewpassword" class="info-input"/>
+</view>
+
+<view class="input-wrap1">
+<radio-group class="choose1" name="radio-group" bindchange="inputIdentity">
+<label ><radio value="0"/>患者</label>
+<view class="break"></view>
+<label ><radio value="1"/>医生</label>
+</radio-group>
+</view>
+
+
+<view class="input-wrap1" id='age'>年龄/岁
+<input value="{{age}}" bindinput="inputAge" class="info-input"/>
+</view>
+
+<view class="input-wrap1" id='hei-wor'>身高/m
+<input value="{{height}}" bindinput="inputHeight" class="info-input"/>
+</view>
+
+<view class="input-wrap1" id='wei-pat'>体重/kg
+<input value="{{weight}}" bindinput="inputWeight" class="info-input"/>
+</view>
+</view>
+
+<view class="{{identity=='1'?'differ1':'differ2'}}">
+<view class="input-wrap1">
+<view>行医资格</view>
+<view class="input-wrap2">
+<radio-group class="choose2" name="radio-group1" bindchange="inputSex">
+<label><radio value="1"/>是</label>
+<view class="break"></view>
+<label><radio value="0"/>否</label>
+</radio-group>
+</view></view>
+
+<view class="input-wrap1" id='age'> 医  龄/年
+<input value="{{age}}" bindinput="inputAge" class="info-input"/>
+</view>
+
+<view class="input-wrap1" id='hei-wor'>工作单位
+<input value="{{height}}" bindinput="inputHeight" class="info-input"/>
+</view>
+
+<view class="input-wrap1" id='wei-pat'>下辖患者
+<input value="{{weight}}" bindinput="inputWeight" class="info-input"/>
+</view>
+</view>
+
+
+  <button bindtap="register" style="width:275rpx" class="login">注册</button>
+

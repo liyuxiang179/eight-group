@@ -1,0 +1,121 @@
+<!--pages/search/search.wxml-->
+<view class="main-body search-body">
+  <!-- <form bindsubmit="formSearch">
+    <view>
+      <input name="inputKey" class="input-search" placeholder="输入关键字" bindinput="bindKeyInput"  bindconfirm="bindInputSearch" confirm-type="search" value="{{key}}" />
+    </view>
+    <view class="hs20"></view>
+    <view>
+      <button class="btn-search" hover-class="btn-search-hover" form-type="submit">时光机搜索</button>
+    </view>
+  </form>
+  <view class="hs20"></view>
+  <view class="hs20"></view>
+  <view class="tag-list-view" wx:key="{{tagList}}" wx:for="{{tagList}}">
+    <text data-id="#{{item.Name}}#" class="tag-list-text" bindtap="bindTagTap">#{{item.Name}}#</text>
+  </view> -->
+  <view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">男</view>
+    <view class="swiper-tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">女</view>
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 80}}px" bindchange="bindChange">
+    <swiper-item>
+      <view class="itemView1">
+        <label class="label-name">年龄/岁：</label>
+        <input class="input-search" name="age" placeholder-class="phcolor" placeholder="请输入年龄" bindinput="ageInput" value="{{age}}" />
+      </view>
+      <view class="itemView1">
+        <label class="label-name">身高/m：</label>
+        <input class="input-search" name="height" placeholder-class="phcolor" placeholder="请输入身高" bindinput="heightInput" value="{{height}}" />
+      </view>
+      <view class="itemView1">
+        <label class="label-name">体重/kg：</label>
+        <input class="input-search" name="weight" placeholder-class="phcolor" placeholder="请输入体重" bindinput="weightInput" value="{{weight}}" />
+      </view>
+      <view class="itemView1">
+        <label class="label-name">每周水果摄入量/kg：</label>
+        <input class="input-search" name="fruit" placeholder-class="phcolor" placeholder="请输入水果摄入量" bindinput="fruitInput" value="{{fruit}}" />
+      </view>
+      <view class="itemView1">
+        <label class="label-name">每周肉类摄入量/kg：</label>
+        <input class="input-search" name="meat" placeholder-class="phcolor" placeholder="请输入肉类摄入量" bindinput="meatInput" value="{{meat}}" />
+      </view>
+      <view class="itemView1">
+        <label class="label-name">每周锻炼次数/次：</label>
+        <input class="input-search" name="exercise" placeholder-class="phcolor" placeholder="请输入锻炼次数" bindinput="exerciseInput" value="{{exercise}}" />
+      </view>
+      <view class="itemView1">
+        <label class="label-name">每天晒太阳时间/h：</label>
+        <input class="input-search" name="sun" placeholder-class="phcolor" placeholder="请输入晒太阳时间" bindinput="sunInput" value="{{sun}}" />
+      </view>
+       <view class="itemView1">
+        <label class="label-name">工作方式：</label>
+        <picker class="input-search" name="pickerwork" value="{{workArray[workIndex].ID}}" bindchange="bindworkChange" range="{{workArray}}" range-key="{{'Name1'}}">
+          <view class="project-class0">{{workArray[workIndex].Name1}}</view>
+        </picker>
+      </view>
+      <view>
+        <button class="btn-new" hover-class="btn-new-hover" bindtap="calculateBtn">计算</button>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="itemView2">
+        <label class="label-name">年龄/岁：</label>
+        <input class="input-search" name="age" placeholder-class="phcolor" placeholder="请输入年龄" bindinput="ageInput" value="{{age}}" />
+      </view>
+      <view class="itemView2">
+        <label class="label-name">身高/m：</label>
+         <input class="input-search" name="height" placeholder-class="phcolor" placeholder="请输入身高" bindinput="heightInput"  value="{{height}}"/> 
+      </view>
+      <view class="itemView2">
+        <label class="label-name">体重/kg：</label>
+         <input class="input-search" name="weight" placeholder-class="phcolor" placeholder="请输入体重" bindinput="weightInput"  value="{{weight}}"/> 
+      </view>
+      <view class="itemView2">
+        <label class="label-name">绝经年限/年：</label>
+         <input class="input-search" name="menopause" placeholder-class="phcolor" placeholder="请输入绝经年限" bindinput="menopauseInput"  value="{{menopause}}"/> 
+      </view>
+      <view class="itemView2">
+        <label class="label-name">每周水果摄入量/kg：</label>
+         <input class="input-search" name="fruit" placeholder-class="phcolor" placeholder="请输入水果摄入量" bindinput="fruitInput"  value="{{fruit}}"/> 
+      </view>
+      <view class="itemView2">
+        <label class="label-name">每周肉类摄入量/kg：</label>
+         <input class="input-search" name="meat" placeholder-class="phcolor" placeholder="请输入肉类摄入量" bindinput="meatInput"  value="{{meat}}"/> 
+      </view>
+      <view class="itemView2">
+        <label class="label-name">每周茶类摄入量：</label>
+         <input class="input-search" name="tea" placeholder-class="phcolor" placeholder="请输入茶类摄入量" bindinput="teaInput"  value="{{tea}}"/> 
+      </view>
+      <view class="itemView2">
+        <label class="label-name">日常出汗量：</label>
+        <picker class="input-search" name="pickersweat" value="{{sweatArray[sweatIndex].ID}}" bindchange="bindsweatChange" range="{{sweatArray}}" range-key="{{'Name2'}}">
+          <view class="project-class">{{sweatArray[sweatIndex].Name2}}
+          </view>
+        </picker>
+      </view>
+      <view class="itemView2">
+        <label class="label-name">每周锻炼次数/次：</label>
+         <input class="input-search" name="exercise" placeholder-class="phcolor" placeholder="请输入锻炼次数" bindinput="exerciseInput"  value="{{exercise}}"/> 
+      </view>
+      <view class="itemView2">
+        <label class="label-name">每天晒太阳时间/h：</label>
+         <input class="input-search" name="sun" placeholder-class="phcolor" placeholder="请输入晒太阳时间" bindinput="sunInput"  value="{{sun}}"/> 
+      </view>
+      <view class="itemView2">
+        <label class="label-name">高血压：</label>
+         <picker class="input-search" name="pickerhypertension" value="{{hypertensionArray[hypertensionIndex].ID}}" bindchange="bindhypertensionChange" range="{{hypertensionArray}}" range-key="{{'Name3'}}">
+          <view class="project-class">{{hypertensionArray[hypertensionIndex].Name3}}
+          </view>
+        </picker>
+      </view>
+      <view>
+        <button class="btn-new" hover-class="btn-new-hover" bindtap="calculateBtn">计算</button>
+      </view>
+    </swiper-item>
+  </swiper>
+
+</view>
+
+

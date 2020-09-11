@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/message/message",
+    "pages/menu/menu",
+    "pages/search/search",
+    "pages/plan/plan",
+    "pages/kepu/kepu"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6fa6cf",
+    "navigationBarTitleText": "骨小松",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#6fa6cf",
+    "borderStyle": "white",
+    "position": "bottom",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/search/search",
+        "text": "风险计算",
+        "iconPath": "images/fenxi.png",
+        "selectedIconPath": "images/fenxi.png"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "首页",
+        "iconPath": "images/shouye.png",
+        "selectedIconPath": "images/shouye.png"
+      },
+      {
+        "pagePath": "pages/plan/plan",
+        "text": "复健计划",
+        "iconPath": "images/richeng.png",
+        "selectedIconPath": "images/richeng.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
